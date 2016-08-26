@@ -1,0 +1,27 @@
+accueil_homepage:
+    path:     /
+    defaults: { _controller: AccueilBundle:Default:index }
+    
+accueil_entretien:
+    path: /entretien
+    defaults: { _controller: AccueilBundle:Entretien:indexcollab }
+
+accueil_entretien_manager:
+    path: /entretien2
+    defaults: { _controller: AccueilBundle:Entretien:index }
+
+accueil_construction:
+    path: /construction
+    defaults: { _controller: AccueilBundle:Default:construction  }
+    
+accueil_fiche_entretien:
+    path: /entretien/detail/{id}-{contrat}-{dateDebut}-{dateFin}-{type}
+    defaults: { _controller: AccueilBundle:Entretien:entretien }
+    
+accueil_pdf:
+    path: /pdf
+    defaults: { _controller: AccueilBundle:Entretien:pdf }
+    
+accueil_recherche:
+    path: /entretien/recherche
+    defaults: { _controller: AccueilBundle:Entretien:resultatrecherche }

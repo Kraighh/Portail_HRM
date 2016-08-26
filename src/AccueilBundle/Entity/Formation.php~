@@ -1,0 +1,82 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Formation
+ *
+ * @ORM\Table(name="formation", indexes={@ORM\Index(name="IDX_404021BF923751E8", columns={"idSalarie"})})
+ * @ORM\Entity
+ */
+class Formation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="libelleFormation", type="string", length=100, nullable=false)
+     */
+    private $libelleformation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dispositifMobilise", type="string", length=100, nullable=false)
+     */
+    private $dispositifmobilise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="duree", type="string", length=100, nullable=false)
+     */
+    private $duree;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="certification", type="string", length=100, nullable=false)
+     */
+    private $certification;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cpf", type="string", length=100, nullable=false)
+     */
+    private $cpf;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="competence", type="string", length=100, nullable=false)
+     */
+    private $competence;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idSalarie", type="integer", nullable=true)
+     */
+    private $idsalarie;
+
+
+}
+

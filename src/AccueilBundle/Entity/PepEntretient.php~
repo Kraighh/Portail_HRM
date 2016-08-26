@@ -1,0 +1,106 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PepEntretient
+ *
+ * @ORM\Table(name="pep_entretient", indexes={@ORM\Index(name="PEPENT_FK01_PEPINT", columns={"INTID_ID"}), @ORM\Index(name="PEPENT_FK02_PEPSAL", columns={"SALID_ID"})})
+ * @ORM\Entity
+ */
+class PepEntretient
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ENTID_ID", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $entidId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_CONTEXTE", type="string", length=100, nullable=true)
+     */
+    private $entlbContexte;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_ENTREPRISE", type="string", length=100, nullable=true)
+     */
+    private $entlbEntreprise;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ENTNB_ANNEE", type="boolean", nullable=true)
+     */
+    private $entnbAnnee;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_VALIDCOLLABORATEUR", type="string", length=3, nullable=true)
+     */
+    private $entlbValidcollaborateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_VALIDMANAGER", type="string", length=3, nullable=true)
+     */
+    private $entlbValidmanager;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_VALIDRH", type="string", length=3, nullable=true)
+     */
+    private $entlbValidrh;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_AVISMANGER", type="string", length=255, nullable=true)
+     */
+    private $entlbAvismanger;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ENTLB_AVISCOLLABORATEUR", type="string", length=255, nullable=true)
+     */
+    private $entlbAviscollaborateur;
+
+    /**
+     * @var \PepSalarie
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="PepSalarie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="SALID_ID", referencedColumnName="SALID_ID")
+     * })
+     */
+    private $salid;
+
+    /**
+     * @var \PepIntervenant
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="PepIntervenant")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="INTID_ID", referencedColumnName="INTID_ID")
+     * })
+     */
+    private $intid;
+
+
+}
+

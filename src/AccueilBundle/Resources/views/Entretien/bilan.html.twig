@@ -1,0 +1,44 @@
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Formation</div>
+        <div class="panel-body">
+            {% if form.formation|length > 0 %}
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Stage</th>
+                            <th>Intitulé</th>
+                            <th>Domaine</th>
+                            <th>Theme</th>
+                            <th>Statut</th>
+                            <th>Session</th>
+                            <th>DateDebut</th>
+                            <th>DateFin</th>
+                            <th>Jours</th>
+                            <th>Heures</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableFormation">
+                        {% for formation in form.formation %}
+                            <tr>                            
+                                <td>{{ form_widget(formation.forlbStage, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbIntitule, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbDomaine, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbTheme, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbStatut, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbSession, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.fordtDateDebut, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.fordtDateFin, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbNbJours, {'attr': {'class': 'form-control'}}) }}</td>
+                                <td>{{ form_widget(formation.forlbNbHeures, {'attr': {'class': 'form-control'}}) }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                    <h2>Aucune formation dans l'historique</h2>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>     
+    <br>
+</div>

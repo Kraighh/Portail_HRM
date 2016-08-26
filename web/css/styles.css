@@ -1,0 +1,23 @@
+.jumbotron { 
+    background-image: url(../imgs/Fond.jpg);
+    color: white;
+}
+
+/* Classe principale de la barre de navigation */
+.navbar-default {
+    /* Couleur de fond de la barre de navigation */
+    background-color: #f7941e ;
+    border-color: #E7E7E7;
+}
+
+.navbar-fixed-bottom{
+    /* Couleur de fond de la barre de navigation */
+    background-color: #f7941e ;
+    border-color: #E7E7E7;
+}
+
+.loading{
+    background-image: url(../imgs/loading.gif);
+    background-repeat: no-repeat;
+}
+

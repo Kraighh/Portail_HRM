@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Année</span>
+            {{ form_widget(formRecherche.entdtDateent, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Validation collaborateur</span>
+            {{ form_widget(formRecherche.entlbValidcollaborateur, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Validation manager</span>
+            {{ form_widget(formRecherche.entlbValidmanager, {'attr': {'class': 'form-control'}}) }}
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Validation RH</span>
+            {{ form_widget(formRecherche.entlbValidrh, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+</div>

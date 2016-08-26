@@ -1,0 +1,44 @@
+{% extends 'AccueilBundle:Templates:templateAccueil.html.twig' %}
+
+{% block accueil %} 
+    <div class="row">
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h1>Portail HRM</h1>   
+                <h2>Bienvenue</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <img class="logo-avem" src="{{ asset("imgs/LogoAvem.PNG") }}" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Informations utilisateur</h3>
+                </div>
+                <div class="panel-body">
+                    <span>Nom : {{nomUser}}</span>
+                    <br>
+                    <span>Prénom : {{prenomUser}}</span>
+                    <br>
+                    <span>Matricule : {{app.session.get('matricule')}}</span>
+                    <br>
+                    <span>Code utilisateur : {{ app.session.get('codeUser') }}</span>                                                                                            
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if app.session.get('manager') == 1 %}
+                        <h3><a href="{{path('accueil_entretien_manager')}}"><span class="label label-default">Entretien pro</span></a></h3>                    
+                    {% else %}
+                        <h3><a href="{{path('accueil_entretien')}}"><span class="label label-default">Entretien pro</span></a></h3>                        
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}    

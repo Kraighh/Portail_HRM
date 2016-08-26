@@ -1,0 +1,68 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Perspective
+ *
+ * @ORM\Table(name="perspective", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_D3C49E97939961EF", columns={"idPerspective"})})
+ * @ORM\Entity
+ */
+class Perspective
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idPerspective", type="integer", nullable=false)
+     */
+    private $idperspective;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="competence", type="string", length=255, nullable=false)
+     */
+    private $competence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255, nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="capacite", type="string", length=1000, nullable=false)
+     */
+    private $capacite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="moyens", type="string", length=255, nullable=false)
+     */
+    private $moyens;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire", type="string", length=1000, nullable=false)
+     */
+    private $commentaire;
+
+
+}
+

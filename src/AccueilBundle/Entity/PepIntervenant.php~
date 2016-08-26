@@ -1,0 +1,54 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PepIntervenant
+ *
+ * @ORM\Table(name="pep_intervenant")
+ * @ORM\Entity
+ */
+class PepIntervenant
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="INTID_ID", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $intidId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="INTUS_PRENOM", type="string", length=50, nullable=true)
+     */
+    private $intusPrenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="INTUS_NOM", type="string", length=50, nullable=true)
+     */
+    private $intusNom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="INTLB_TYPE", type="string", length=50, nullable=true)
+     */
+    private $intlbType;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="INTLB_METIER", type="string", length=50, nullable=true)
+     */
+    private $intlbMetier;
+
+
+}
+

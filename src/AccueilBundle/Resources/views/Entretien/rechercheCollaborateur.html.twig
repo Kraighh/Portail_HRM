@@ -1,0 +1,46 @@
+<form id="form_recherche" action="{{ path('accueil_recherche') }}" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Année</span>
+                {{ form_widget(formRecherche.entnbAnnee, {'attr': {'class': 'form-control'}}) }}                
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Collaborateur</span>
+                {{ form_widget(formRecherche.nomPrenomCollab, {'attr': {'class': 'form-control'}}) }}                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input type="submit" value="Rechercher" />
+            <div class="loading"><br><br></div>
+        </div>        
+    </div>
+</form>       
+
+<script>
+    $(".loading").hide();
+    $("#form_recherche").submit(function () {
+        $(".loading").show();
+        var annee = $("#recherche_entnbAnnee").val();
+        var nomPrenom = $("#recherche_nomPrenomCollab option:selected").text();
+
+        $.ajax({
+            type: "POST",
+            url: "{{ path('accueil_recherche')}}",
+            data: {annee: annee, nomPrenom: nomPrenom},
+            cache: false,
+            success: function (data) {
+                $('#resultats_recherche').html(data);
+                $(".loading").hide();
+            },
+            error: function (exception) {
+                alert('Exeption:' + exception);
+            }
+        });
+        return false;
+    });
+</script>

@@ -1,0 +1,48 @@
+{% if lstEntretiensSubs|length > 0 %}
+    <table id="tableau" class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Collaborateur</th>
+                <th>Type</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Validation collaborateur</th>
+                <th>Validation manager</th>
+                <th>Validation RH</th>             
+            </tr>
+        </thead>
+        <tbody>    
+            {% for entretien in lstEntretiensSubs %}
+                <tr onclick="location.href = '{{path('accueil_fiche_entretien', {'id':"#{entretien.salid}", 'contrat':"#{entretien.idContrat}",'dateDebut':"#{entretien.entdtDateDebut|trim('-')}", 'dateFin':"#{entretien.entdtDateFin|trim('-')}", 'type':"#{entretien.entlbType}" })}}';" onmouseover="this.bgColor = 'f7941e'" style="cursor: pointer;"   onMouseOut ="this.bgColor = 'FFFFFF'">                  
+                    <td>{{entretien.nomPrenomCollab}}</td>
+                    <td>{{entretien.entlbType}}</td>
+                    <td>{{entretien.entdtDateDebut}}</td>
+                    <td>{{entretien.entdtDateFin}}</td>
+                    <td>
+                        {% if entretien.entlbValidcollaborateur == false %}
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if entretien.entlbValidmanager == false %}
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if entretien.entlbValidrh == false %}
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        {% endif %}
+                    </td>              
+                </tr>  
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <h2>Liste vide</h2>
+{% endif %}

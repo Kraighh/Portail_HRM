@@ -1,0 +1,80 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PepFormation
+ *
+ * @ORM\Table(name="pep_formation", indexes={@ORM\Index(name="PEPFOR_FK01_PEPSAL", columns={"SALID_ID"})})
+ * @ORM\Entity
+ */
+class PepFormation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="FORID_ID", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $foridId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORLB_LIBELLE", type="string", length=100, nullable=true)
+     */
+    private $forlbLibelle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORLB_DISPOSITIF", type="string", length=100, nullable=true)
+     */
+    private $forlbDispositif;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORLB_DUREE", type="string", length=20, nullable=true)
+     */
+    private $forlbDuree;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="FORDT_DATE", type="datetime", nullable=true)
+     */
+    private $fordtDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORLB_CERTIFICATION", type="string", length=3, nullable=true)
+     */
+    private $forlbCertification;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FORLB_CPF", type="string", length=3, nullable=true)
+     */
+    private $forlbCpf;
+
+    /**
+     * @var \PepSalarie
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="PepSalarie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="SALID_ID", referencedColumnName="SALID_ID")
+     * })
+     */
+    private $salid;
+
+
+}
+

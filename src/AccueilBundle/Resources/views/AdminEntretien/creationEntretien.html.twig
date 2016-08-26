@@ -1,0 +1,38 @@
+{% extends 'AccueilBundle:Templates:templateAccueil.html.twig' %}
+
+{% block accueil %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Création de campagne d'entretien</h3>
+        </div>
+        <div class="panel-body">
+            <form id="form_create" action="{{ path('accueil_ajax') }}" method="post">
+                {{ form_widget(form) }}
+                <input type="submit" value="Rechercher" />
+            </form>
+        </div>
+        <div id='res'>
+        </div>
+        <div class="loading"></div>
+    </div>
+                
+<script>
+$(".loading").hide();
+$("#form_create").submit(function(){ 
+    $(".loading").show();    
+    var contexte = $("#creation_campagne_entlbContexte").val();
+    var DATA = 'motcle=' + contexte;
+    $.ajax({
+        type: "POST",
+        url: "{{ path('accueil_ajax')}}"
+        data: DATA,
+        cache: false,
+        success: function(data){
+           $('#res').html(data);
+           $(".loading").hide();
+        }
+    });    
+    return false;
+});
+</script>                
+{% endblock %}

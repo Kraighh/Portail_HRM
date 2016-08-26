@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include 'AccueilBundle:Blocks:head.html.twig' %}  
+    </head>
+    <body>
+        {# la barre de navigation #}
+        {% include 'AccueilBundle:Blocks:navBar.html.twig' %}
+        <br><br><br>
+
+        <div class='row'>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10"> 
+                <article>
+                    {% block accueil %}
+
+                    {% endblock %}          
+                </article>               
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <footer>
+            {% include 'AccueilBundle:Blocks:footer.html.twig' %}  
+        </footer>
+
+    </body>
+</html>
+

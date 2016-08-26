@@ -1,0 +1,54 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Contrat
+ *
+ * @ORM\Table(name="contrat")
+ * @ORM\Entity
+ */
+class Contrat
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEntreeEntreprise", type="datetime", nullable=false)
+     */
+    private $dateentreeentreprise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="metier", type="string", length=100, nullable=false)
+     */
+    private $metier;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="niveau", type="integer", nullable=false)
+     */
+    private $niveau;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coefficient", type="integer", nullable=false)
+     */
+    private $coefficient;
+
+
+}
+

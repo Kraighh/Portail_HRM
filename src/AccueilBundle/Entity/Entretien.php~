@@ -1,0 +1,96 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Entretien
+ *
+ * @ORM\Table(name="entretien", indexes={@ORM\Index(name="IDX_2B58D6DABDE8E0FD", columns={"idCollaborateur"}), @ORM\Index(name="IDX_2B58D6DAEA9D4E4B", columns={"idManager"}), @ORM\Index(name="IDX_2B58D6DAE350D2D5", columns={"idRh"})})
+ * @ORM\Entity
+ */
+class Entretien
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="anneeEntretien", type="datetime", nullable=false)
+     */
+    private $anneeentretien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contexte", type="string", length=100, nullable=false)
+     */
+    private $contexte;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateEntretien", type="datetime", nullable=false)
+     */
+    private $dateentretien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="entreprise", type="string", length=100, nullable=false)
+     */
+    private $entreprise;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validationCollaborateur", type="string", length=100, nullable=false)
+     */
+    private $validationcollaborateur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validationManager", type="string", length=100, nullable=false)
+     */
+    private $validationmanager;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="validationRh", type="string", length=100, nullable=false)
+     */
+    private $validationrh;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idCollaborateur", type="integer", nullable=true)
+     */
+    private $idcollaborateur;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idManager", type="integer", nullable=true)
+     */
+    private $idmanager;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idRh", type="integer", nullable=true)
+     */
+    private $idrh;
+
+
+}
+

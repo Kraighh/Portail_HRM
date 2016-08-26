@@ -1,0 +1,110 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PepSalarie
+ *
+ * @ORM\Table(name="pep_salarie")
+ * @ORM\Entity
+ */
+class PepSalarie
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="SALID_ID", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $salidId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALUS_PRENOM", type="string", length=100, nullable=true)
+     */
+    private $salusPrenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALUS_NOM", type="string", length=100, nullable=true)
+     */
+    private $salusNom;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="SALDT_DEBUT", type="datetime", nullable=true)
+     */
+    private $saldtDebut;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_METIER", type="string", length=100, nullable=true)
+     */
+    private $sallbMetier;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_NIVEAU", type="string", length=100, nullable=true)
+     */
+    private $sallbNiveau;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_COEF", type="string", length=100, nullable=true)
+     */
+    private $sallbCoef;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_COMPETENCE", type="string", length=255, nullable=true)
+     */
+    private $sallbCompetence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_FAITMARQUANT", type="string", length=255, nullable=true)
+     */
+    private $sallbFaitmarquant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_INTERET", type="string", length=255, nullable=true)
+     */
+    private $sallbInteret;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_PROJET", type="string", length=100, nullable=true)
+     */
+    private $sallbProjet;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_ATOUT", type="string", length=100, nullable=true)
+     */
+    private $sallbAtout;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="SALLB_BESOIN", type="string", length=100, nullable=true)
+     */
+    private $sallbBesoin;
+
+
+}
+

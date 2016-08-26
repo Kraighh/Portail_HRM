@@ -1,0 +1,73 @@
+<?php
+
+namespace AccueilBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * PepPerspective
+ *
+ * @ORM\Table(name="pep_perspective", indexes={@ORM\Index(name="PEPPER_FK01_PEPSAL", columns={"SALID_ID"})})
+ * @ORM\Entity
+ */
+class PepPerspective
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="PERID_ID", type="bigint", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     */
+    private $peridId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PERLB_COMPETENCE", type="string", length=100, nullable=true)
+     */
+    private $perlbCompetence;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PERLB_DESCRIPTION", type="string", length=100, nullable=true)
+     */
+    private $perlbDescription;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PERLB_CAPACITE", type="string", length=100, nullable=true)
+     */
+    private $perlbCapacite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PERLB_MOYEN", type="string", length=100, nullable=true)
+     */
+    private $perlbMoyen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PERLB_COMMENTAIRE", type="string", length=255, nullable=true)
+     */
+    private $perlbCommentaire;
+
+    /**
+     * @var \PepSalarie
+     *
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="PepSalarie")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="SALID_ID", referencedColumnName="SALID_ID")
+     * })
+     */
+    private $salid;
+
+
+}
+
